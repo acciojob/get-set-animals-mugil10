@@ -1,19 +1,29 @@
-function makeChange(amount) {
-  let q = Math.floor(amount / 25);
-  amount = amount % 25;
+class Animal {
+  constructor(species) {
+    this.species = species;
+  }
 
-  let d = Math.floor(amount / 10);
-  amount = amount % 10;
+  get species() {
+    return this._species;
+  }
 
-  let n = Math.floor(amount / 5);
-  amount = amount % 5;
+  set species(value) {
+    this._species = value;
+  }
 
-  let p = amount;
+  makeSound() {
+    return "Some generic animal sound";
+  }
+}
 
-  return {
-    q: q,
-    d: d,
-    n: n,
-    p: p
-  };
+class Cat extends Animal {
+  purr() {
+    return "Purr";
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    return "Woof";
+  }
 }
