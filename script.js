@@ -1,11 +1,19 @@
-//complete this code
-class Animal {}
+function makeChange(amount) {
+  let q = Math.floor(amount / 25);
+  amount = amount % 25;
 
-class Dog extends Animal {}
+  let d = Math.floor(amount / 10);
+  amount = amount % 10;
 
-class Cat extends Animal {}
+  let n = Math.floor(amount / 5);
+  amount = amount % 5;
 
-// Do not change the code below this line
-window.Animal = Animal;
-window.Dog = Dog;
-window.Cat = Cat;
+  let p = amount;
+
+  return {
+    q: q,
+    d: d,
+    n: n,
+    p: p
+  };
+}
